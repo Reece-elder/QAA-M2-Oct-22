@@ -3,6 +3,9 @@
 
 # this is a data type of class, the name of the class is Uppercase
 
+from attr import has
+
+
 class Cake:
     colour = "Brown"
     flavour = "Choc"
@@ -74,10 +77,14 @@ for cake in cakeList:
 # Modifying and setting our attribute values(These aren't *strictly* getters and setters)
 # getattr takes in an object and a string of the attribute you're interested in
 print(getattr(carrotCake, 'colour'))
-print(carrotCake.colour)
+print(carrotCake.vegan)
+print(carrotCake.vegan)
+print(carrotCake.vegan)
 
 # Allows you to modify the attribute by passing in a value 
-chosen_attr = "vegan"
+chosen_attr = "colour" 
+print(getattr(carrotCake, chosen_attr))
+print(getattr(carrotCake, chosen_attr))
 print(getattr(carrotCake, chosen_attr))
 
 # hasattr - checks if this object contains this attribute (returns True or False)
@@ -91,7 +98,7 @@ print(hasattr(blackForest, 'calories'))
 # delattr - Takes in object, attribute name and removes this attribute (not just value)
 print(f"Calories: {blackForest.calories}")
 delattr(blackForest, 'colour')
-print(blackForest.colour)
+# print(blackForest.colour)
 
 # Because python doesnt specify type it assumes the user has done it right
 # But you should still verify whether it is right 
@@ -99,3 +106,15 @@ print(blackForest.colour)
 # Exercise - Implement a custom __str__ function into your class
 # Use the get, set, has and del to Add a custom attribute, check they are added, 
 # if they are set them to a new value and delete an existing attribute 
+
+print("================================================")
+setattr(carrotCake, "number_carrots", 6)
+print(getattr(carrotCake, "number_carrots"))
+
+if hasattr(carrotCake, "number_carrots"):
+    setattr(carrotCake, "number_carrots", {getattr(carrotCake, "number_carrots") - 2})
+    print("Eaten some carrots")
+    delattr(carrotCake, "vegan")
+    print(carrotCake)
+else:
+    print("has no carrots :( ")
