@@ -52,5 +52,7 @@ class RockHopper(Penguin):
     def layEgg(self):
         return f"{self.name} laid an egg!"
 
+        
+
 rockHop1 = RockHopper("Blue", "Rocky", 12, 42, True)
-print(rockHop1.layEgg())
+rockHop1.setFeathers("Purple")
