@@ -44,3 +44,13 @@ ostrich1 = Ostrich("Grey", "Olly", 142, 62)
 # Stretch - Have a Child parent structure where each child of the parent has 
 # 2 sub children below Parent > Child > Sub Child
 
+class RockHopper(Penguin):
+    def __init__ (self, feathers, name, wingspan, swimSpeed, funnyHair):
+        super().__init__(feathers, name, wingspan, swimSpeed)
+        self.funnyHair = funnyHair
+    
+    def layEgg(self):
+        return f"{self.name} laid an egg!"
+
+rockHop1 = RockHopper("Blue", "Rocky", 12, 42, True)
+print(rockHop1.layEgg())
