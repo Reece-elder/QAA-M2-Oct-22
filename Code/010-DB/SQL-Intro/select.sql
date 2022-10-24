@@ -20,4 +20,15 @@
 SELECT * FROM Customers ORDER BY last_name ASC;
 SELECT * FROM Customers ORDER BY last_name DESC;
 
-SELECT DISTINCT country FROM Customers ORDER BY country; 
+SELECT DISTINCT country FROM Customers ORDER BY country;
+
+-- All Orders sorted by item and showing amount, order_id and item
+SELECT amount, order_id, item FROM Orders ORDER BY item; 
+-- All shippings where status is pending
+SELECT * FROM Shippings WHERE status = "Pending";
+-- All customers whose first name is john
+SELECT * FROM Customers WHERE first_name = "John";
+-- All orders where they ordered between 100 and 350
+SELECT * FROM Orders WHERE amount BETWEEN 100 AND 350;
+-- All customers ordered by country
+SELECT * FROM Customers ORDER BY country;
