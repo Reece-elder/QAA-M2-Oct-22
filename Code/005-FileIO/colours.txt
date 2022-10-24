@@ -1,0 +1,6 @@
+Red
+Purple
+New fruit added: Grapefruit
+New fruit added: Cumquat
+New fruit added: Banana
+New fruit added: Pear
