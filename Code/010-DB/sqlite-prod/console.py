@@ -1,5 +1,5 @@
 from setup import createConn, createTable
-from service import createRow, getAllData, getDataByID
+from service import createRow, getAllData, getDataByID, deleteById
 
 conn = createConn("prod-db")
 cursor = conn.cursor()
@@ -18,6 +18,7 @@ def consoleInput():
         1. Create Data
         2. Get All Data
         3. Get One piece of Data
+        4. Delete one piece of Data
         """
         )
     choice = input("Please enter an option: ")
@@ -25,9 +26,11 @@ def consoleInput():
     if choice == "1":
         createRowConsole()
     elif choice == "2":
-        getAllDataConsole()
+        print(getAllData())
     elif choice == "3":
         getOneDataConsole()
+    elif choice == "4":
+        deleteOneConsole()
 
 def createRowConsole():
     id = input("Please enter fruit id: ")
@@ -41,6 +44,11 @@ def createRowConsole():
 def getOneDataConsole():
     id = input("Please enter fruit id: ")
     print(getDataByID(conn, id))
+
+def deleteOneConsole():
+    id = input("Please enter fruit id: ")
+    deleteById(conn, id)
+    print(f"Fruit of {id} deleted")
 
 consoleInput()
 

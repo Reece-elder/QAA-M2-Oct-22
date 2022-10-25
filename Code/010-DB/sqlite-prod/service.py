@@ -35,3 +35,7 @@ def getDataByID(conn, id):
     data = conn.cursor().execute(f"SELECT * FROM fruits WHERE fruit_id == {id}")
     listData = data.fetchall()
     return listData
+
+def deleteById(conn, id):
+    conn.cursor().execute(f"DELETE FROM fruits WHERE fruit_id == {id}")
+    return True
