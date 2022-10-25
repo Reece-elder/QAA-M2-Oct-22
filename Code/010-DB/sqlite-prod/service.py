@@ -11,8 +11,8 @@ def createRow(conn, query):
         conn.cursor().execute(query)
         conn.commit()
         return True
-    except Exception:
-        print(str(Exception))
+    except Exception as e:
+        print(str(e))
         print("An Exception happened :(")
         # You can put in a try except block into an existing block
         # try: 
