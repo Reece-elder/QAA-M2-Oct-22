@@ -1,5 +1,5 @@
 from setup import createConn, createTable
-from service import createRow, getAllData
+from service import createRow, getAllData, getDataByID
 
 conn = createConn("prod-db")
 cursor = conn.cursor()
@@ -27,7 +27,7 @@ def consoleInput():
     elif choice == "2":
         getAllDataConsole()
     elif choice == "3":
-        print("Not made the function yet..")
+        getOneDataConsole()
 
 def createRowConsole():
     id = input("Please enter fruit id: ")
@@ -37,6 +37,10 @@ def createRowConsole():
     query = f"INSERT INTO fruits VALUES({id}, '{colour}', {rating}, '{name}');"
 
     createRow(conn, query)
+
+def getOneDataConsole():
+    id = input("Please enter fruit id: ")
+    print(getDataByID(conn, id))
 
 consoleInput()
 
